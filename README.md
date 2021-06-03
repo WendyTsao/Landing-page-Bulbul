@@ -1,4 +1,7 @@
-# bulbul-landingpage
+# Landing page - Chinese bulbul
+
+Test time: 2021.06.03 - TravelSkope
+## 💡 [DEMO](https://landing-page-bulbul.herokuapp.com/)
 
 ## Project setup
 ```
