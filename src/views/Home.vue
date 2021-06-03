@@ -2,24 +2,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-12 col-lg-3">
-        <div class="navbar">
-          <div class="menubar">
-            <a class="menubar-open">
-              <i class="fas fa-bars"></i>
-            </a>
-            <h3>白頭翁不吃小米</h3>
-            <div class="logo"></div>
-          </div>
-          <div class="menu-item">
-            <ul class="item">
-              <li><a href="#">白頭翁的特性</a></li>
-              <li><a href="#">白頭翁的故事</a></li>
-              <li><a href="#">白頭翁的美照</a></li>
-              <li><a href="#">白頭翁的危機</a></li>
-              <li>&copy;</li>
-            </ul>
-          </div>
-        </div>
+        <Menu></Menu>
       </div>
       <div class="col-12 col-lg-9">
         <div class="col-12">
@@ -43,11 +26,12 @@
 
 <script>
 // @ is an alias to /src
-import Intro from '../components/intro.vue';
+import Intro from '../components/Intro.vue';
+import Menu from '../components/Menu.vue';
 
 export default {
   components: {
-    Intro,
+    Intro, Menu
   },
 };
 </script>
