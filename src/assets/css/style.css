@@ -37,7 +37,7 @@ ul,li{
     width: 100%;
     padding: 10px 0;
     overflow: hidden;
-    transition: .5s ease;
+    transition: .3s;
 }
 
 .copyright{
