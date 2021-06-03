@@ -26,7 +26,7 @@
 
 <script>
 // @ is an alias to /src
-import Intro from '../components/Intro.vue';
+import Intro from '../components/Into.vue';
 import Menu from '../components/Menu.vue';
 
 export default {
