@@ -9,17 +9,17 @@
     </div>
     <div class="menu-item">
       <ul class="item" >
-        <li v-for="menu in menuItems" :class="{'hidden-menu':menubarStatus}" :key="menu.item">
+        <li v-for="menu in menuItems" :class="{'hidden-menu':!menubarStatus}" :key="menu.item">
           <a href="#">{{ menu.item }}</a>
         </li>
       </ul>
-      <div :class="['copyright',{'hidden-copyright':menubarStatus}]">&copy;</div>
+      <div :class="['copyright',{'hidden-copyright':!menubarStatus}]">&copy;</div>
     </div>
   </div>
 </template>
 
 <script>
-import { ref } from "vue";
+import { onMounted, computed, ref } from "vue";
 
 export default {
   setup() {
@@ -30,12 +30,21 @@ export default {
       { item: "白頭翁的危機" },
     ];
 
-    const menubarStatus = ref(false);
-    const openMenu = ()=> {
-      menubarStatus.value = !menubarStatus.value
-    };
+    
+    const showMenu = ref(false);
+    const openMenu = ()=> showMenu.value = !showMenu.value;
 
-    return { menuItems, menubarStatus, openMenu };
+    const screenWidth = ref(document.body.offsetWidth);
+    const isDesktop = computed(()=> screenWidth.value >= 992);
+
+    onMounted(() => {
+      document.addEventListener('scroll', ()=> showMenu.value = false);
+      window.addEventListener('resize', ()=>  screenWidth.value = document.body.offsetWidth);
+    });
+      const menubarStatus = computed(()=> showMenu.value || isDesktop.value);
+
+
+    return { menuItems, showMenu, menubarStatus, openMenu};
   },
 };
 </script>
