@@ -1,0 +1,176 @@
+.row>* {
+    padding: 0;
+}
+
+ul,li{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-weight: 300;
+}
+
+.menubar{
+    width: 100%;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menubar-open i{
+    font-size: 2rem;
+    padding-left: 10px;
+    color: #000;
+}
+
+.menu-item{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    transition: .3s;
+}
+
+.item li{
+    width: 100%;
+    padding: 10px 0;
+    overflow: hidden;
+    transition: .5s ease;
+}
+
+.item li:last-child{
+    padding-top: 20px;
+}
+
+.menu-item a{
+    text-decoration: none;
+    color: #000;
+}
+
+.menu-item a:hover{
+    color: #975555;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #975555;
+}
+
+.logo{
+    width: 50px;
+    height: 50px;
+    border: 6px solid rgba(196, 152, 145, .8);
+    border-radius: 50px;
+    margin-right: 10px;
+}
+
+.banner{
+    height: 350px;
+    background: url("../pic/banner.jpg") no-repeat center / cover;
+    position: relative;
+}
+
+.txt{
+    width: 350px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    color: #fff;
+    text-align: right;
+}
+
+.txt h1{
+    font-size: 3rem;
+}
+
+.txt p{
+    color: rgba(255, 255, 255, .8);
+}
+
+
+.intro{
+    background-color: #DDCCBB;
+    padding: 30px 15px;
+}
+
+.intro-item{
+    display: flex;
+    position: relative;
+}
+
+.intro-item h1{
+    padding-right: 30px;
+}
+
+.intro-item h1::after{
+    content: "";
+    position: absolute;
+    top: 60px;
+    left: 30px;
+    width: 20px;
+    height: 20px;
+    border: 6px solid rgba(196, 152, 145, .8);
+    border-radius: 20px;
+}
+
+@media screen and (min-width: 992px) {
+    .navbar{
+        height: 100vh;
+        display: block;
+        padding-top: 3rem;
+    }
+
+    .menubar-open{
+        display: none;
+    }
+    
+    .menubar{
+        position: relative;
+        justify-content: center;
+    }
+
+    .logo{
+        position: absolute;
+        right: -8%;
+        z-index: 2;
+        background-color: #fff;
+        margin-right: 0;
+    }
+
+    .menu-item{
+        padding-top: 3rem;
+    }   
+
+    .item li:last-child{
+        display: none;
+    }     
+
+    .banner{
+        height: 60vh;
+    }
+
+    .txt{
+        width: 900px;
+        top: 60%;
+    }        
+
+    .intro{
+        height: 40vh;
+        display: flex;
+        align-items: center;
+    }
+
+    .intro-item{
+        padding: 0 10px;
+    }
+ 
+    .intro-item h1::after{
+        top: 80px;
+        left: 40px;
+    }
+    
+}
